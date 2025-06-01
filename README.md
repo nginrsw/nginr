@@ -1,6 +1,6 @@
 # nginr
 
-**Nginr** is a Python syntax alternative (or dialect) that allows using the `fn` keyword instead of `def`. It is **not** a new programming language, but rather a **preprocessor** that converts `.xg` files into standard Python code before execution.
+**nginr** is a Python syntax alternative (or dialect) that allows using the `fn` keyword instead of `def`. It is **not** a new programming language, but rather a **preprocessor** that converts `.xg` files into standard Python code before execution.
 
 > Inspired by Python’s readability, Nginr adds a fun twist by using `fn` — making your code feel fresh-modern while staying fully compatible with Python.
 
