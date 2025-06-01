@@ -1,6 +1,6 @@
 # nginr
 
-**nginr** is a Python syntax alternative (or dialect) that allows using the `fn` keyword instead of `def`. It is **not** a new programming language, but rather a **preprocessor** that converts `.xg` files into standard Python code before execution.
+**nginr** is a Python syntax alternative (or dialect) that allows using the `fn` keyword instead of `def`. It is **not** a new programming language, but rather a **preprocessor** that converts `.xr` files into standard Python code before execution.
 
 > Inspired by Python’s readability, Nginr adds a fun twist by using `fn` — making your code feel fresh-modern while staying fully compatible with Python.
 
@@ -36,10 +36,10 @@ pip install -e .
 
 ## Quick Start
 
-1. Create a file with `.xg` extension:
+1. Create a file with `.xr` extension:
 
 ```python
-# hello.xg
+# hello.xr
 fn hello(name):
     print(f"Hello, {name}!")
 
@@ -49,7 +49,7 @@ hello("World")
 2. Run it with:
 
 ```bash
-nginr hello.xg
+nginr hello.xr
 ```
 
 ---
@@ -58,14 +58,14 @@ nginr hello.xg
 
 Nginr is a simple preprocessor:
 
-1. Reads `.xg` files
+1. Reads `.xr` files
 2. Replaces `fn` with `def`
 3. Executes the resulting Python code
 
 ### Example Conversion
 
 ```python
-# Input (hello.xg)
+# Input (hello.xr)
 fn greet(name):
     print(f"Hi, {name}!")
 
@@ -130,7 +130,7 @@ fn get_weather(city):
 
 ## Python Library Compatibility
 
-You can use **any** Python package in your `.xg` files.
+You can use **any** Python package in your `.xr` files.
 
 Install them as usual:
 
@@ -148,10 +148,10 @@ Run this to see available options:
 nginr --help
 ```
 
-You can also pass arguments to your `.xg` script:
+You can also pass arguments to your `.xr` script:
 
 ```bash
-nginr script.xg arg1 arg2
+nginr script.xr arg1 arg2
 ```
 
 ---
@@ -160,7 +160,7 @@ nginr script.xg arg1 arg2
 
 * Only performs basic `fn → def` substitution
 * No new syntax or typing system
-* `.xg` errors will show traceback in the transformed `.py` version
+* `.xr` errors will show traceback in the transformed `.py` version
 * No built-in macro system or advanced parsing (yet)
 
 ---
