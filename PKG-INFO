@@ -1,0 +1,199 @@
+Metadata-Version: 2.4
+Name: nginr
+Version: 0.1.5
+Summary: Nginr - Python Alt syntax with fn keyword and .xg files
+Home-page: https://github.com/nginrsw/nginr
+Author: Gillar Prasatya
+Author-email: nginrsw@gmail.com
+Project-URL: Bug Reports, https://github.com/nginrsw/nginr/issues
+Project-URL: Source, https://github.com/nginrsw/nginr
+Keywords: python syntax preprocessor language-extension
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: black>=21.0; extra == "dev"
+Requires-Dist: isort>=5.0; extra == "dev"
+Requires-Dist: mypy>=0.910; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-python
+Dynamic: summary
+
+# Nginr
+
+Nginr is a Python syntax alternative that allows using the `fn` keyword instead of `def`. Nginr is not a new programming language, but rather a preprocessor that converts code with the `.xg` extension into standard Python code before execution.
+
+## Installation
+
+### Using pip (easiest way)
+```bash
+pip install nginr
+```
+
+### Installation from source
+1. Clone this repository:
+```bash
+git clone https://github.com/nginrsw/nginr.git
+cd nginr
+```
+
+2. Install in development mode:
+```bash
+pip install -e .
+```
+
+## Requirements
+- Python 3.6 or newer
+- pip (Python package manager)
+
+## Basic Usage
+
+1. Create a file with `.xg` extension, for example `hello.xg`:
+
+```python
+# hello.xg
+fn hello(name):
+    print(f"Hello, {name}!")
+
+hello("World")
+```
+
+2. Run the file with the command:
+```bash
+nginr hello.xg
+```
+
+## How It Works
+
+1. Nginr reads files with `.xg` extension
+2. Performs simple preprocessing (replaces `fn` with `def`)
+3. Executes the resulting Python code
+
+## More Examples
+
+### Function with Parameters
+```python
+fn add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(f"5 + 3 = {result}")
+```
+
+### Loops and Conditionals
+```python
+fn factorial(n):
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+for i in range(1, 6):
+    print(f"{i}! = {factorial(i)}")
+```
+
+## Features
+
+- **Full Python Compatibility**: Use any Python library or framework
+- **Alternative Syntax**: `fn` keyword as an alternative to `def`
+- **Seamless Integration**: Works with existing Python code and tools
+- **Lightweight**: Simple preprocessing with minimal overhead
+- **Extensible**: Supports all Python 3.7+ features and libraries
+
+## Python Library Compatibility
+
+Nginr is 100% compatible with Python libraries. You can use any Python package in your `.xg` files:
+
+```python
+# Using external libraries
+fn calculate_stats(data):
+    import numpy as np
+    import pandas as pd
+    
+    df = pd.DataFrame(data)
+    return {
+        'mean': np.mean(df.values),
+        'std': np.std(df.values),
+        'sum': np.sum(df.values)
+    }
+
+# Using standard library
+fn get_weather(city):
+    import json
+    from urllib.request import urlopen
+    
+    with urlopen(f'https://weather.example.com/api?city={city}') as response:
+        return json.load(response)
+```
+
+### Installing Dependencies
+
+You can install Python packages using pip as usual:
+
+```bash
+# Install packages for your Nginr project
+pip install numpy pandas requests
+```
+
+## Limitations
+
+- Only performs simple preprocessing (replaces `fn` with `def`)
+- No additional features beyond standard Python
+- Lacks full programming language features like type systems or custom compilers
+- Debugging shows the generated Python code, not the original `.xg` source
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute, please:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## Lisensi
+
+MIT
+
+## Editor Support
+
+### Visual Studio Code
+
+1. Make sure you have the [Pyright](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) extension installed
+2. Add the following configuration to `.vscode/settings.json`:
+
+```json
+{
+    "files.associations": {
+        "*.xg": "python"
+    },
+    "python.analysis.extraPaths": ["."],
+    "python.analysis.typeCheckingMode": "basic"
+}
+```
+
+
+## Support
+
+If you encounter any issues or have questions, please open a new [issue](https://github.com/nginrsw/nginr/issues) in the repository.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
