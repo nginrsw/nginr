@@ -19,7 +19,7 @@ def preprocess_source(source):
     return ''.join(lines)
 
 def run_file(file_path):
-    """Run a .xg file"""
+    """Run a .xr file"""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             source = f.read()
@@ -48,7 +48,7 @@ def print_version():
 
 def print_usage():
     """Print usage information"""
-    print("Usage: nginr [--version] <file.xg>")
+    print("Usage: nginr [--version] <file.xr>")
     print("\nOptions:")
     print("  --version  Show version and exit")
 
@@ -66,8 +66,8 @@ def main():
     file_path = sys.argv[1]
     
     # Check file extension
-    if not file_path.endswith('.xg'):
-        print("Error: File must have .xg extension", file=sys.stderr)
+    if not file_path.endswith('.xr'):
+        print("Error: File must have .xr extension", file=sys.stderr)
         print_usage()
         return 1
     

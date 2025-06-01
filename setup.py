@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="nginr",
-    version="0.1.5",  # Alpha release (PEP 440 compliant)
+    version="0.1.7",  
     packages=find_packages(include=['nginr*']),
     entry_points={
         'console_scripts': [
@@ -32,7 +32,7 @@ setup(
     },
     author="Gillar Prasatya",
     author_email="nginrsw@gmail.com",
-    description="Nginr - Python Alt syntax with fn keyword and .xg files",
+    description="Nginr - Python Alt syntax with fn keyword and .xr files",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/nginrsw/nginr",
