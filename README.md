@@ -1,4 +1,4 @@
-# nginr
+# Nginr
 
 **nginr** is a Python syntax alternative (or dialect) that allows using the `fn` keyword instead of `def`. It is **not** a new programming language, but rather a **preprocessor** that converts `.xr` files into standard Python code before execution.
 
