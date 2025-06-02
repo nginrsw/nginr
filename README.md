@@ -40,7 +40,7 @@ pip install -e .
 
 ```python
 # hello.xr
-fn hello(name):
+fn hello(name: str) -> None:
     print(f"Hello, {name}!")
 
 hello("World")
@@ -66,7 +66,7 @@ Nginr is a simple preprocessor:
 
 ```python
 # Input (hello.xr)
-fn greet(name):
+fn greet(name: str) -> None:
     print(f"Hi, {name}!")
 
 # After preprocessing:
@@ -81,7 +81,7 @@ def greet(name):
 ### Function with Parameters
 
 ```python
-fn add(a, b):
+fn add(a: int, b: int) -> int:
     return a + b
 
 result = add(5, 3)
@@ -91,7 +91,7 @@ print(f"5 + 3 = {result}")
 ### Loops and Conditionals
 
 ```python
-fn factorial(n):
+fn factorial(n: int) -> int:
     if n <= 1:
         return 1
     return n * factorial(n - 1)
@@ -103,7 +103,7 @@ for i in range(1, 6):
 ### Using External Libraries
 
 ```python
-fn calculate_stats(data):
+fn calculate_stats(data: Any) -> Dict[str, float]:
     import numpy as np
     import pandas as pd
 
@@ -118,7 +118,7 @@ fn calculate_stats(data):
 ### Using the Standard Library
 
 ```python
-fn get_weather(city):
+fn get_weather(city: str) -> Any:
     import json
     from urllib.request import urlopen
 
