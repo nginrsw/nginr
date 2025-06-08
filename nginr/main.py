@@ -13,9 +13,9 @@ def preprocess_source(source):
     """Preprocess source code to replace 'fn' with 'def'"""
     lines = []
     for line in source.splitlines(keepends=True):
-        # Hanya proses baris yang mengandung 'fn' yang merupakan awal kata
+        # Only the row process contains 'fn' which is the beginning of the word
         if re.search(r'\bfn\b', line):
-            # Ganti 'fn' di awal fungsi
+            # Change 'fn' at the beginning of the function
             line = re.sub(r'\bfn\s+([a-zA-Z_][a-zA-Z0-9_]*\s*\()', r'def \1', line)
         lines.append(line)
     return ''.join(lines)
