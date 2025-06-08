@@ -192,3 +192,13 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Project-specific for core-developer
+blueprint/
+my_test_app/
+my_test_app2/
+test_run.xr
+
+# Editor/IDE specific
+.vscode/
+.idea/

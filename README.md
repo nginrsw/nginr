@@ -54,6 +54,39 @@ nginr hello.xr
 
 ---
 
+## Initializing a New Project
+
+Nginr can also help you quickly set up a new project structure. Use the `init` command:
+
+```bash
+nginr init your_project_name
+```
+
+This will create a directory named `your_project_name` with the following structure:
+
+```
+your_project_name/
+├── README.md
+├── requirements.txt
+├── nginr_config.yaml
+├── docs/
+│   ├── architecture.md
+│   ├── api.md
+│   └── dev-notes.md
+├── src/
+│   ├── __init__.py
+│   └── main.xr
+├── tests/
+│   └── test_main.xr
+└── .gitignore
+```
+
+The `src/main.xr` will contain a simple "Hello from nginr!" program, and `README.md` will be pre-filled with the project title. Other files are created as placeholders for you to fill in.
+
+If the target directory already exists, `nginr init` will display an error and will not overwrite existing files.
+
+---
+
 ## How It Works
 
 Nginr is a simple preprocessor:
@@ -142,17 +175,18 @@ pip install numpy pandas requests
 
 ## CLI Options
 
-Run this to see available options:
+Nginr provides the following command-line options:
 
-```bash
-nginr --help
-```
-
-You can also pass arguments to your `.xr` script:
-
-```bash
-nginr script.xr arg1 arg2
-```
+*   `nginr <file.xr> [args...]`: Runs an `.xr` script. You can pass arguments to your script as well.
+    ```bash
+    nginr script.xr arg1 arg2
+    ```
+*   `nginr init <project_name>`: Initializes a new Nginr project structure.
+    ```bash
+    nginr init my_new_app
+    ```
+*   `nginr --help`: Shows the help message, including available commands and options.
+*   `nginr --version`: Shows the installed Nginr version.
 
 ---
 
